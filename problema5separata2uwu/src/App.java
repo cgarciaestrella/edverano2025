@@ -49,6 +49,9 @@ public class App {
                         }
                     }
                 }
+                
+                // Falta el proceso de ordenar el arreglo
+                
                 for (int i=0; i<h; i++) {
                     System.out.println(c[i]);
                 }    
