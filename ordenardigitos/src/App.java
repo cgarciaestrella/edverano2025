@@ -14,7 +14,9 @@ public class App {
                 int x = n % 10;
                 a[i] = x;
                 n = n / 10;                
-            }               
+            } 
+            
+            // Está incompleto revisar el proyecto ordenararreglodigitos
         }
         else{
             System.out.println("XD");
