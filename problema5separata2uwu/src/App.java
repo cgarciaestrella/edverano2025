@@ -42,7 +42,7 @@ public class App {
                         if (a[i]==b[j]) {
                             c[w] = a[i];
                             w = w + 1;
-                            if(w == h -1){
+                            if(w == h - 1){
                                 break;
                             }
 
@@ -50,11 +50,19 @@ public class App {
                     }
                 }
                 
-                // Falta el proceso de ordenar el arreglo
-                
+                for(int i=1; i<h; i++){
+                    for(int j=0; j<h-i; j++){
+                        System.out.println(j);
+                        if (c[j] > c[j+1]) {
+                            int aux = c[j];
+                            c[j] = c[j+1];
+                            c[j+1] = aux;    
+                        }
+                    }
+                }
                 for (int i=0; i<h; i++) {
                     System.out.println(c[i]);
-                }    
+                }   
             }
             else{
                 System.out.println("No existen coincidencias");
