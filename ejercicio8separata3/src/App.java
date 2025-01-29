@@ -12,7 +12,7 @@ public class App {
                 a[i][j] = ""; 
             }    
         }
-        int turno = 1, movimiento = 0, fila, columna;
+        int turno = 1, movimiento = 0, fila, columna, flag=0, gana=0;
         String x="x", o = "0";
         while (movimiento<=9) {
             if (turno==1) {
@@ -62,7 +62,61 @@ public class App {
             movimiento = movimiento + 1;
             if (movimiento==5) {
                 System.out.println("Ya puedes ganar");
-                // Tengo evaluar al posible ganador
+                if (turno==2) { // Evaluar si X gana
+                    for(int i=0; i<3; i++){ // Evalúa las filas
+                        gana = 0;
+                        for(int j=0; j<3;i++){
+                            if (a[i][j]==x) {
+                                gana = gana + 1;
+                            }
+                        }
+                        if(gana==3){
+                            String ganador = x;
+                            flag=1;
+                        }
+                    }
+                    for(int i=0; i<3; i++){ // Evalúa las columnas
+                        gana = 0;
+                        for(int j=0; j<3;i++){
+                            if (a[j][i]==x) {
+                                gana = gana + 1;
+                            }
+                        }
+                        if(gana==3){
+                            String ganador = o;
+                            flag=1;
+                        }                        
+                    }
+                    
+                    for(int i=0; i<3; i++){ // Evalúa la columna 0
+                        if (a[i][0]==x) {
+                            gana = gana + 1;
+                        }
+                    }
+                    for(int i=0; i<3; i++){ // Evalúa la columna 1
+                        if (a[i][1]==x) {
+                            gana = gana + 1;
+                        }
+                    }
+                    for(int i=0; i<3; i++){ // Evalúa la columna 2
+                        if (a[i][2]==x) {
+                            gana = gana + 1;
+                        }
+                    }
+                    for(int i=0; i<3; i++){ // Diagonal izquierda derecha
+                        if (a[i][i]==x) {
+                            gana = gana + 1;
+                        }
+                    }
+                    for(int i=0; i<3; i++){ // Diagonal derecha izquierda 
+                        if (a[i][2-i]==x) {
+                            gana = gana + 1;
+                        }
+                    }
+                }
+                else{ // Evaluar si 0 gana
+
+                }
             }       
         }  
         
